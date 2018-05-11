@@ -20,7 +20,7 @@ Under the current implementation, there are several configurable attributes. Def
 # Configuration for Create Issue Upon Repo Creation
 
 
-# Enables detection and removal of any Outside Collaborator being added to the assigned repositories
+# Enables the creation of an issue when a new repository is created
 enableIssueCreation: true
 
 # Issue Title when a repository is created
