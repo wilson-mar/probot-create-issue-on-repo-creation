@@ -13,6 +13,26 @@ Please note that this app is meant to demonstrate the functional capabilities of
 - Read the in-line documentation explaining the functionality of the app
 - Customize the implementation to fit your needs
 
+## Configuration
+Under the current implementation, there are several configurable attributes. Defaults for these attributes can be set in the [defaults.js](./lib/defaults.js) file, but it is recommended that each org in which this is implemented creates an override file with a file called `.github/open-issue-on-repo-creation.yml` file in the Repository, `org-settings`. This Repository will contain global settings for the Organization. You can name the settings repository anything you'd like; just add the repository name to your defaults.js file.
+
+```yml
+# Configuration for Create Issue Upon Repo Creation
+
+
+# Enables detection and removal of any Outside Collaborator being added to the assigned repositories
+enableIssueCreation: true
+
+# Issue Title when a repository is created
+createdIssueTitle: 'Repository Setup First Steps'
+
+# Issue Body when a repository is created
+createdIssueBody: 'Congratulations! You\'ve just created a new repository. Please complete the following tasks to make sure that your work can be seen and discoverable by other members of the organization:\n- [ ] Give @[YOUR_ORG_NAME]/[YOUR_TEAM_NAME] at least read access\n- [ ] Add some [topics](https://blog.github.com/2017-01-31-introducing-topics/) that describe the content and purpose of your repository'
+
+# Users/Groups that should be cc'ed on the issue. Should be users/groups separated by a space.
+# ccList: '@user123 @user456'
+```
+
 ## Deployment
 
 Probot is a standard NodeJS app, and thus can be deployed as such. [Documentation](https://probot.github.io/docs/deployment) is available on the Probot website, which provides directions for deployment using Glitch, Heroku, and Now.
