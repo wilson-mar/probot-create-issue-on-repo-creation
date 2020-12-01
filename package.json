@@ -7,13 +7,14 @@
   "repository": "https://github.com/migarjo/probot-create-new-repo-issues.git",
   "scripts": {
     "dev": "nodemon --exec \"npm start\"",
-    "start": "probot run ./index.js",
+    "start": "node ./handler.js",
     "lint": "standard --fix",
     "test": "jest && standard",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
-    "probot": "^6.0.0"
+    "@probot/serverless-lambda": "^1.0.0",
+    "probot": "^10.14.1"
   },
   "devDependencies": {
     "jest": "^22.4.3",
